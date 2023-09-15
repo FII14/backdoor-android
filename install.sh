@@ -6,4 +6,7 @@ wget "https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar"
 cp "apktool" "/usr/local/bin"
 mv "apktool_2.8.1.jar" "apktool.jar"
 cp "apktool.jar" "/usr/local/bin"
-keytool -genkey -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+keytool -genkey -V -keystore key.keystore -alias hacked -keyalg RSA -keysize 2048 -validity 10000
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.keystore facebook_lite.apk
+jarsigner -verify -verbose -certs facebook_lite.apk
+zipalign -v 4 facebook_lite.apk facebook_lite_fii14.apk
